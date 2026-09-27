@@ -1,0 +1,26 @@
+services:
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ai-router-gateway:latest
+    ports:
+      - "5176:5176"
+    volumes:
+      - gateway_data:/data
+    environment:
+      - PORT=5176
+      - DB_TYPE=sqlite
+      - DB_PATH=/data/gateway.db
+      - JWT_SECRET=${JWT_SECRET:-change-me-in-production}
+      - ENCRYPTION_KEY=${ENCRYPTION_KEY:-change-me-in-production-32chars-min}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:5176/api/auth/me"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  gateway_data:

@@ -1,0 +1,19 @@
+[build]
+  # 编译命令
+  cmd = "go build -o server.exe ./cmd/server"
+  # 编译后运行的二进制
+  entrypoint = "start-backend.bat"
+  # 编辑后延迟 300ms 再编译，避免保存时连发
+  delay = 300
+  # 监听的目录（不含 .go 的目录会被自动跳过）
+  include_dir = ["cmd", "internal", "pkg"]
+  # 排除的目录
+  exclude_dir = ["data", "assets", ".git", "tmp"]
+  # 排除的文件
+  exclude_regex = ["_test\\.go"]
+
+[log]
+  main_only = true
+
+[misc]
+  clean_on_exit = true

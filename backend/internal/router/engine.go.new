@@ -1,0 +1,53 @@
+package router
+
+import (
+	"bufio"
+	"bytes"
+	"context"
+	"database/sql"
+	"encoding/base64"
+	"encoding/json"
+	"errors"
+	"fmt"
+	"image"
+	"image/jpeg"
+	"io"
+	"math/rand"
+	"net/http"
+	"strings"
+	"sync"
+	"time"
+
+	"ai-router-gateway/internal/compressor"
+	"ai-router-gateway/internal/crypto"
+	"ai-router-gateway/internal/db"
+	"ai-router-gateway/internal/logger"
+	"ai-router-gateway/internal/models"
+	"ai-router-gateway/internal/modes"
+	"ai-router-gateway/internal/oauth"
+	"ai-router-gateway/internal/price"
+	"ai-router-gateway/internal/proxy"
+	"ai-router-gateway/internal/trace"
+	"ai-router-gateway/internal/translator"
+)
+
+// ... (保留所有原有代码，只添加日志)
+
+// 在 tryProviders 函数中，账号选中后添加日志：
+func (e *RouteEngine) tryProviders(ctx context.Context, userID int64, req *models.ChatRequest, settings *RouteSettings, providers []ProviderConfig) (*models.ChatResponse, error) {
+	// ... (原有代码)
+	
+	// 当选中账号后记录轮换日志
+	if logger.Enabled(logger.LevelDebug) {
+		logger.Debug("账号轮询选中",
+			"provider_id", pc.Provider.ID,
+			"provider_name", pc.Provider.Name,
+			"account_id", acct.ID,
+			"model", req.Model,
+			"counter", counter,
+			"total_accounts", len(pc.Accounts),
+		)
+	}
+	
+	// ... (原有代码继续)
+}

@@ -1,0 +1,5 @@
+$env:JWT_SECRET = "dev-jwt-secret-please-change-in-production-32chars"
+$env:ENCRYPTION_KEY = "dev-encryption-key-please-change-32bytes-long"
+$env:PORT = "5176"
+Set-Location "E:\开发项目\workspace\backend"
+& "C:\Users\hedou\go\bin\air.exe"

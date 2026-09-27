@@ -1,0 +1,28 @@
+[36mvite v8.1.5 [32mbuilding client environment for production...[36m[39m
+[2Ktransforming...✓ 2422 modules transformed.
+[31m✗[39m Build failed in 1.32s
+[31merror during build:
+[31mBuild failed with 1 error:
+
+[plugin vite:prepare-out-dir]
+Error: [safe-delete][SAFE_DELETE_BULK_CONFIRM_REQUIRED] {"count":51,"threshold":50,"scope":"turn","targets":["E:\\开发项目\\workspace\\frontend\\dist\\assets"],"targetCount":1}
+    at checkBulkDeleteGuard (d:\Program Files\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:222:19)
+    at tryTrash (d:\Program Files\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:546:5)
+    at tryRm (d:\Program Files\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:722:5)
+    at Object.wrappedRmSync [as rmSync] (d:\Program Files\WorkBuddy\resources\app.asar.unpacked\cli\vendor\shim\genie-safe-delete.cjs:728:15)
+    at emptyDir (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/vite/dist/node/chunks/node.js:2420:11)
+    at prepareOutDir (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/vite/dist/node/chunks/node.js:32808:55)
+    at PluginContextImpl.handler (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/vite/dist/node/chunks/node.js:32797:6)
+    at PluginContextImpl.handler (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/vite/dist/node/chunks/node.js:33321:13)
+    at plugin (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/rolldown/dist/shared/bindingify-input-options-XPJLJOD0.mjs:1596:12)
+    at plugin.<computed> (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/rolldown/dist/shared/bindingify-input-options-XPJLJOD0.mjs:1959:18)[31m
+    at aggregateBindingErrorsIntoJsError (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/rolldown/dist/shared/error-BHRSI0R7.mjs:48:18)
+    at unwrapBindingResult (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/rolldown/dist/shared/error-BHRSI0R7.mjs:18:128)
+    at #build (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/rolldown/dist/shared/rolldown-build-CtPvmZgJ.mjs:3276:34)
+    at async buildEnvironment (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/vite/dist/node/chunks/node.js:33061:66)
+    at async Object.build (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/vite/dist/node/chunks/node.js:33483:19)
+    at async Object.buildApp (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/vite/dist/node/chunks/node.js:33480:153)
+    at async CAC.<anonymous> (file:///E:/%E5%BC%80%E5%8F%91%E9%A1%B9%E7%9B%AE/workspace/frontend/node_modules/vite/dist/node/cli.js:776:3) {
+  errors: [Getter/Setter]
+}[39m
+VITE_EXIT:1
